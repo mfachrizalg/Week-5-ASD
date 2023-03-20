@@ -43,7 +43,7 @@ int main()
       mystack.push(a[i]);
     	}
   
-	for(i = 0; i < a.length(); i++) //algoritma untuk menampilkan slang malang ke terminal.
+	for(int i = 0; i < a.length(); i++) //algoritma untuk menampilkan slang malang ke terminal.
 	    {
 	      cout<<mystack.top();
 	      mystack.pop();

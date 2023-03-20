@@ -1,0 +1,53 @@
+#include <iostream>
+#include <string>
+#include <stack>
+
+using namespace std;
+
+int main()
+{
+	string a;
+	stack<char> mystack;
+	getline(cin,a); //agar inputan dapat terbaca ketika ada elemen ' '.
+	
+	for(int i = 0; i<a.length(); i++)
+    {
+      if(a[i] == 'n' && a[i+1] == 'g') // melakukan penukaran ketika ada kata yang elemennya 'n' dan 'g', dimana 'n' lebih muncul dahulu dan tidak berjarak terhadap 'g'. Contoh kata :  "malang".
+        {
+          char temp = a[i+1];
+          a[i+1] = a[i];
+          a[i] = temp;
+        }
+
+      if(a[i] == 'a' && a[i+2] == 'u') // melakukan penukaran ketika ada kata yang elemennya 'a' dan 'u', dimana elemen'a' lebih muncul dahulu dan berjarak satu elemen terhadap elemen 'u'. Contoh kata :  "matur".
+        {
+          char buff = a[i+2];
+          a[i+2] = a[i];
+          a[i] = buff;
+        }
+
+      if(a[i] == ' ') //jika kalimat tersebut terdiri lebih dari satu kata, maka kata pertama harus tetap menjadi kata pertama.
+        {
+          if(a[0] == 'm' && a[1] == 'a' && a[2] == 's') // jika pertama adalah "mas", maka kata tersebut akan bergeser menjadi kata kedua dan diganti susunan elemennya.
+            {}
+          else
+            {
+              while(mystack.empty() == 0) //algoritma agar kata pertama tetap menjadi kata pertama.
+                {
+                  cout<<mystack.top();
+                  mystack.pop();
+                }
+              cout<<" ";
+            }
+        }
+      mystack.push(a[i]);
+    }
+  
+	for(int j = 0; j<a.length(); j++) //algoritma untuk menampilkan slang malang ke terminal.
+    {
+      cout<<mystack.top();
+      mystack.pop();
+    }
+  
+  return 0;
+}

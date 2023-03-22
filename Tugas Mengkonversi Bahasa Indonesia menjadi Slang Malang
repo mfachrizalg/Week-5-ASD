@@ -12,7 +12,7 @@ int main()
 	
 	for(int i = 0; i < a.length(); i++)
     	 {
-	   if(a[i] == 'n' && a[i+1] == 'g') // melakukan penukaran ketika ada kata yang mempunyai elemen 'n' dan 'g', dimana 'n' muncul dahulu dan tidak berjarak terhadap elemen 'g'. Contoh kata :  "malang".
+	   if(a[i] == 'n' && a[i+1] == 'g') // melakukan penukaran ketika ada kata yang mempunyai elemen 'n' dan 'g', dimana 'n' muncul dahulu dan tidak berjarak terhadap elemen 'g'. Contoh kata : "malang".
 		{
 		  char temp = a[i+1];
 		  a[i+1] = a[i];
